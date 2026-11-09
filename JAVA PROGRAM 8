@@ -1,0 +1,31 @@
+public class OddEvenCLA {
+
+    public static void main(String[] args) {
+
+        // Step 1: Check if an argument was provided
+        if (args.length == 0) {
+            System.out.println("Error: No argument provided.");
+            System.out.println("Usage: java OddEvenCLA <number>");
+            return;
+        }
+
+        try {
+            // Step 2: Convert command line argument (String) to integer
+            int num = Integer.parseInt(args[0]);
+
+            // Step 3: Check odd or even using if-else
+            System.out.println("----- Odd/Even Checker -----");
+            System.out.println("Number entered : " + num);
+
+            if (num % 2 == 0) {
+                System.out.println("Result         : " + num + " is EVEN");
+            } else {
+                System.out.println("Result         : " + num + " is ODD");
+            }
+
+        } catch (NumberFormatException e) {
+            // Handles case where argument is not a valid integer
+            System.out.println("Error: Please enter a valid integer as the argument.");
+        }
+    }
+}
