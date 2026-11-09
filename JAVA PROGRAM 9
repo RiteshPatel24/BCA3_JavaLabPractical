@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class StudentGrade {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Step 1: Take input for number of subjects
+        System.out.print("Enter number of subjects: ");
+        int numSubjects = sc.nextInt();
+
+        int[] marks = new int[numSubjects];
+        int total = 0;
+
+        // Step 2: Take marks input for each subject
+        for (int i = 0; i < numSubjects; i++) {
+            System.out.print("Enter marks for subject " + (i + 1) + " (out of 100): ");
+            marks[i] = sc.nextInt();
+            total += marks[i];
+        }
+
+        // Step 3: Calculate percentage
+        double percentage = (double) total / numSubjects;
+
+        // Step 4: Determine grade using if-else conditions
+        char grade;
+        String remarks;
+
+        if (percentage >= 90) {
+            grade = 'A';
+            remarks = "Outstanding";
+        } else if (percentage >= 75) {
+            grade = 'B';
+            remarks = "Excellent";
+        } else if (percentage >= 60) {
+            grade = 'C';
+            remarks = "Good";
+        } else if (percentage >= 45) {
+            grade = 'D';
+            remarks = "Average";
+        } else if (percentage >= 35) {
+            grade = 'E';
+            remarks = "Needs Improvement";
+        } else {
+            grade = 'F';
+            remarks = "Fail";
+        }
+
+        // Step 5: Determine pass/fail result
+        String result;
+        if (percentage >= 35) {
+            result = "PASS";
+        } else {
+            result = "FAIL";
+        }
+
+        // Step 6: Display output
+        System.out.println("\n----- Student Result -----");
+        System.out.println("Total Marks     : " + total + " / " + (numSubjects * 100));
+        System.out.printf("Percentage      : %.2f%%\n", percentage);
+        System.out.println("Grade           : " + grade);
+        System.out.println("Remarks         : " + remarks);
+        System.out.println("Result          : " + result);
+
+        sc.close();
+    }
+}
