@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class PersonalInfo {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Step 1: Collect personal information
+        System.out.print("Enter your Full Name       : ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter your Age              : ");
+        int age = sc.nextInt();
+        sc.nextLine(); // consume leftover newline
+
+        System.out.print("Enter your Gender            : ");
+        String gender = sc.nextLine();
+
+        System.out.print("Enter your Date of Birth (dd/mm/yyyy): ");
+        String dob = sc.nextLine();
+
+        System.out.print("Enter your Mobile Number    : ");
+        String mobile = sc.nextLine();
+
+        System.out.print("Enter your Email Address    : ");
+        String email = sc.nextLine();
+
+        System.out.print("Enter your City             : ");
+        String city = sc.nextLine();
+
+        System.out.print("Enter your State             : ");
+        String state = sc.nextLine();
+
+        System.out.print("Enter your Country          : ");
+        String country = sc.nextLine();
+
+        System.out.print("Enter your Qualification    : ");
+        String qualification = sc.nextLine();
+
+        System.out.print("Enter your Occupation        : ");
+        String occupation = sc.nextLine();
+
+        // Step 2: Display collected information
+        System.out.println("\n===========================================");
+        System.out.println("           PERSONAL INFORMATION");
+        System.out.println("===========================================");
+        System.out.println("Full Name        : " + name);
+        System.out.println("Age              : " + age);
+        System.out.println("Gender           : " + gender);
+        System.out.println("Date of Birth    : " + dob);
+        System.out.println("Mobile Number    : " + mobile);
+        System.out.println("Email Address    : " + email);
+        System.out.println("City             : " + city);
+        System.out.println("State            : " + state);
+        System.out.println("Country          : " + country);
+        System.out.println("Qualification    : " + qualification);
+        System.out.println("Occupation       : " + occupation);
+        System.out.println("===========================================");
+
+        sc.close();
+    }
+}
