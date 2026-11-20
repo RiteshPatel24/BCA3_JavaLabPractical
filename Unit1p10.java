@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class OneDArrayDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+
+        int[] numbers = new int[size];
+
+        // Taking input for the array
+        for (int i = 0; i < size; i++) {
+            System.out.print("Enter element " + (i + 1) + ": ");
+            numbers[i] = scanner.nextInt();
+        }
+
+        // Displaying the array
+        System.out.println("\n--- Array Elements ---");
+        for (int i = 0; i < size; i++) {
+            System.out.println("Element " + (i + 1) + ": " + numbers[i]);
+        }
+
+        // Calculating sum and average
+        int sum = 0;
+        for (int i = 0; i < size; i++) {
+            sum += numbers[i];
+        }
+        double average = (double) sum / size;
+
+        // Finding the maximum and minimum
+        int max = numbers[0];
+        int min = numbers[0];
+        for (int i = 1; i < size; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+            if (numbers[i] < min) {
+                min = numbers[i];
+            }
+        }
+
+        System.out.println("\n--- Array Statistics ---");
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + average);
+        System.out.println("Maximum: " + max);
+        System.out.println("Minimum: " + min);
+
+        scanner.close();
+    }
+}
