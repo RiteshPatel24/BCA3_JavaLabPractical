@@ -1,0 +1,62 @@
+public class ArithmeticCLA {
+
+    public static void main(String[] args) {
+
+        // Step 1: Check if correct number of arguments provided
+        if (args.length != 3) {
+            System.out.println("Error: Invalid number of arguments.");
+            System.out.println("Usage: java ArithmeticCLA <num1> <operator> <num2>");
+            System.out.println("Operators supported: + - * / %");
+            return;
+        }
+
+        try {
+            // Step 2: Parse arguments
+            double num1 = Double.parseDouble(args[0]);
+            String operator = args[1];
+            double num2 = Double.parseDouble(args[2]);
+            double result;
+
+            // Step 3: Perform operation based on operator using if-else
+            System.out.println("----- Arithmetic Operation -----");
+            System.out.println("Number 1  : " + num1);
+            System.out.println("Operator  : " + operator);
+            System.out.println("Number 2  : " + num2);
+
+            if (operator.equals("+")) {
+                result = num1 + num2;
+                System.out.println("Result    : " + num1 + " + " + num2 + " = " + result);
+
+            } else if (operator.equals("-")) {
+                result = num1 - num2;
+                System.out.println("Result    : " + num1 + " - " + num2 + " = " + result);
+
+            } else if (operator.equals("*")) {
+                result = num1 * num2;
+                System.out.println("Result    : " + num1 + " * " + num2 + " = " + result);
+
+            } else if (operator.equals("/")) {
+                if (num2 == 0) {
+                    System.out.println("Error: Division by zero is not allowed.");
+                } else {
+                    result = num1 / num2;
+                    System.out.println("Result    : " + num1 + " / " + num2 + " = " + result);
+                }
+
+            } else if (operator.equals("%")) {
+                if (num2 == 0) {
+                    System.out.println("Error: Modulus by zero is not allowed.");
+                } else {
+                    result = num1 % num2;
+                    System.out.println("Result    : " + num1 + " % " + num2 + " = " + result);
+                }
+
+            } else {
+                System.out.println("Error: Invalid operator '" + operator + "'. Use one of: + - * / %");
+            }
+
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Please enter valid numeric values for num1 and num2.");
+        }
+    }
+}
